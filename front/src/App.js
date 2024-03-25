@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
@@ -7,6 +8,16 @@ function App() {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
         console.log(e.target.value);
+    };
+    const handleSubmit = () => {
+        axios
+            .post('http://localhost:8000/submit-code/', { code: inputValue })
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error('There was an error!', error);
+            });
     };
 
     return (
@@ -22,7 +33,9 @@ function App() {
                     value={inputValue}
                     onChange={handleInputChange}
                 />
-                <button className="submit-btn">submit your code</button>
+                <button className="submit-btn" onClick={handleSubmit}>
+                    submit your code
+                </button>
             </div>
             <div className="bottom"></div>
         </div>
