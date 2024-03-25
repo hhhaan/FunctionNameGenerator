@@ -25,19 +25,19 @@ def generate_function_name(function_code):
 
     # template 정의
     code_based_template = """
-    As a Function Name Generator, you have the ability to analyze Python function code and suggest a name that accurately reflects its operation. Consider the following criteria when suggesting a name:
+    The function name generator lets you analyze the code of a Python function and suggest a name that accurately reflects its behavior. When suggesting names, consider the following criteria
 
-    - The name should be in English, using only alphabetic characters.
-    - It must follow Python's naming conventions, being lowercase with words separated by underscores if necessary.
-    - The suggested name should directly reflect the function's main purpose or output.
-    - Avoid generic names; the suggestion should be specific and descriptive of what the function does.
-    - The name must be concise, capturing the essence of the function's functionality in as few words as possible without sacrificing clarity.
+    - The name must be written in English, using only alphabetic characters.
+    - Know the language of the code and name it according to the conventions of that language
+    - The proposed name should directly reflect the main purpose or output of the function.
+    - It should be specific and descriptive of what the function does.
+    - The name of the function should be concise, capturing the essence of what the function does in as few words as possible without losing clarity.
 
-    Analyze the following Python function code:
+    Consider analyzing the following Python function code
 
     {function_code}
 
-    Based on its functionality, suggest a suitable name for this function.
+    Suggest a suitable name for this function based on its function.
     """
 
     # from_template() 메소드를 사용하여 PromptTemplate 객체 생성
