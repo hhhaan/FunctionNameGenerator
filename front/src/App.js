@@ -7,7 +7,7 @@ function App() {
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
-        console.log(e.target.value);
+        // console.log(e.target.value);
     };
     const handleSubmit = () => {
         axios
