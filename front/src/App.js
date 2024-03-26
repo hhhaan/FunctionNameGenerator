@@ -13,6 +13,7 @@ function App() {
         axios
             .post('http://localhost:8000/submit-code/', { code: inputValue })
             .then((response) => {
+                setInputValue(response.data.received_code);
                 console.log(response.data);
             })
             .catch((error) => {
